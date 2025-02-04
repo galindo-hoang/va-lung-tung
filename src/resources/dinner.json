@@ -1,0 +1,42 @@
+{
+    "title": "Chúng mình sẽ đi ăn gì nhỉ?",
+    "items":
+    [
+        {
+            "name": "Bibimbap"
+        },
+        {
+            "name": "Sushi"
+        },
+        {
+            "name": "Phở/Bún"
+        },
+        {
+            "name": "Ramen"
+        },
+        {
+            "name": "Mỳ cay"
+        },
+        {
+            "name": "Gà rán"
+        },
+        {
+            "name": "Lẩu"
+        },
+        {
+            "name": "Nướng"
+        },
+        {
+            "name": "Hamburger"
+        },
+        {
+            "name": "Pizza"
+        },
+        {
+            "name": "Pasta"
+        },
+        {
+            "name": "Tacos"
+        }
+    ]    
+}

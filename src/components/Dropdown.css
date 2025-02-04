@@ -1,0 +1,55 @@
+/* CustomDropdown.css */
+.custom-dropdown {
+    position: relative;
+    width: 75%;
+    /* Adjust as needed */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    background-color: white;
+}
+
+.dropdown-header {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-list {
+    position: absolute;
+    width: 75%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    list-style: none;
+    padding: 0;
+    margin: 10;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-bottom: 1px solid #ccc;
+    /* Smooth hover effect */
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+    /* Remove border from the last item */
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown-item.selected {
+    background-color: #e0e0e0;
+}
