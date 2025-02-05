@@ -4,9 +4,17 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./InputDateScreen.css";
 import { FiCalendar } from "react-icons/fi"; // Calendar icon
 import MyCustomButton from "./Button";
+import { useNavigate } from "react-router-dom";
 
-const InputDateScreen = ({timestamp, onClick}) => {
-
+const InputDateScreen = ({timestamp, onClick, nextPath}) => {
+  const navigate = useNavigate();
+  const onContinue = (e) => {
+    if(timestamp == null) {
+      alert("Chọn ngày đi nè bạn iu...")
+      return 
+    }
+    navigate(nextPath)
+  }
   return (
     <div className="container">
       <h1 className="content-title">Chọn ngày đi bạn iu...</h1>
@@ -24,7 +32,7 @@ const InputDateScreen = ({timestamp, onClick}) => {
           <FiCalendar className="calendar-icon" />
         </div>
         <div className="content-button">
-          <MyCustomButton />
+          <MyCustomButton onClick={onContinue}/>
         </div>
         </div>
       </div> 

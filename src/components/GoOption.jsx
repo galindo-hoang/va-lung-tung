@@ -3,8 +3,11 @@ import "../components/GoOption.css";
 import MyCustomButton from "./Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
-const DinnerScreen = ({onClick, data, onContinue, value}) => {
+const DinnerScreen = ({onClick, data, nextPath, value}) => {
+  console.log(value, JSON.stringify(data))
+  const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -30,11 +33,10 @@ const DinnerScreen = ({onClick, data, onContinue, value}) => {
       alert("Đừng quên chọn đó nhaaaa")
       return
     }
-    onContinue()
+    navigate(nextPath)
   }
   const handleClick = (val) => {
-    console.log(val)
-    // onClick(val)
+    onClick(val)
     setIsOpen(!isOpen);
   }
 
@@ -52,14 +54,13 @@ const DinnerScreen = ({onClick, data, onContinue, value}) => {
           </div>
         })}
           {isOpen && (
-            <ul className="dropdown-list" onClick={(e) => e.stopPropagation()}>
+            <ul className="dropdown-list" ref={dropdownRef}>
               {data.items.map((option, index) => (
                 <li
                   key={option.name}
                   className="dropdown-item"
                   onClick={(event) => {
-
-                    event.stopPropagation(); // Prevent unintended closing
+                    event.preventDefault()
                     handleClick(option.name)
                   }}
                 >
@@ -71,7 +72,7 @@ const DinnerScreen = ({onClick, data, onContinue, value}) => {
       </div>
 
       <div className="option-dropdown">
-        <div className="custom-dropdown" ref={dropdownRef}>
+        <div className="custom-dropdown">
           <div className="dropdown-header" onClick={toggleDropdown}>
             <span className="selected-option">
             {value ? value : "Chọn ở đây nha"}
