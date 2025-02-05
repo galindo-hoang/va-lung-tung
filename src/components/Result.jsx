@@ -12,7 +12,7 @@ const MyScreen = ({data}) => {
                 <div className="colon">:</div>
                 <div className="value date-input">
                     <span id="date-value">14/02/2025</span>
-                    <span class="calendar-icon">
+                    <span className="calendar-icon">
                         <img src={require("../resources/calendar.png")} alt="Calendar" /> 
                     </span> 
                 </div>

@@ -5,31 +5,29 @@ import "./InputDateScreen.css";
 import { FiCalendar } from "react-icons/fi"; // Calendar icon
 import MyCustomButton from "./Button";
 
-const InputDateScreen = () => {
-  const [selectedDate, setSelectedDate] = useState(null);
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date); // Ensure it's a Date object
-  };
+const InputDateScreen = ({timestamp, onClick}) => {
 
   return (
-    <div>
-      <h1>Chọn ngày đi bạn iu...</h1>
-      <div>
-        <h3>Hum nào cậu rãnh nhỉ?</h3>
-
+    <div className="container">
+      <h1 className="content-title">Chọn ngày đi bạn iu...</h1>
+      <div className="content-container">
+        <div className="content-body">
+        <h3 className="content-body-header">Hum nào cậu rãnh nhỉ?</h3>
         <div className="datepicker-container">
           <DatePicker
-            selected={selectedDate}
-            onChange={handleDateChange}
+            selected={timestamp}
+            onChange={onClick}
             dateFormat="dd/MM/yyyy"
             className="custom-input"
             placeholderText="Chọn 1 ngày đi"
           />
           <FiCalendar className="calendar-icon" />
         </div>
-      </div>
-      <MyCustomButton />
+        <div className="content-button">
+          <MyCustomButton />
+        </div>
+        </div>
+      </div> 
     </div>
   );
 };

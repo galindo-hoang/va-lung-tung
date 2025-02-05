@@ -1,6 +1,14 @@
+.option-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+    height: 90vh;
+    margin-top: 5%;
+}
+
 .menu-item {
     border-radius: 20px;
-    background-color: purple;
     aspect-ratio: 1/1;
     overflow: hidden;
     color: black;
@@ -21,22 +29,22 @@ img {
     color: white;
 }
 
-.menu-container {
+.option-body {
     display: grid;
     padding: 10px 30px;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2%;
-    
 }
 h1 {
     margin: 0;
 }
 
-.menu-header {
+.option-header {
     color: palevioletred;
+    text-align: center;
 }
 
-.menu-options {
+.option-dropdown {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,7 +52,7 @@ h1 {
     margin-top: 15px;
 }
 
-.menu-continue {
+.option-footer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,3 +60,63 @@ h1 {
     margin-top: 15px;
 }
 /* Optional: Style the image container for aspect ratio */
+
+
+/* CustomDropdown.css */
+.custom-dropdown {
+    position: relative;
+    width: 75%;
+    /* Adjust as needed */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    background-color: white;
+}
+
+.dropdown-header {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    /* Ensures it appears on top of other elements */
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    list-style: none;
+    width: 220px;
+    /* Adjust as needed */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    /* Smooth hover effect */
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+    /* Remove border from the last item */
+}
+
+.dropdown-item:hover {
+    background-color: purple;
+}
+
+.dropdown-item.selected {
+    background-color: #e0e0e0;
+}
