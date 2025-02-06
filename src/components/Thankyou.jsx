@@ -10,7 +10,7 @@ const MyScreen = ({nextPath}) => {
     <div className="screen-container"> {/* Main container */}
       <div className="text-content"> {/* Container for text and flowers */}
         <div className="text-container">
-          <h1>Thank u for being my bae!</h1>
+          Thank u for being my bae!
         </div>
         <div className="flower"> 
           <div className="flower">

@@ -1,6 +1,5 @@
 /* styles.css */
 .screen-container {
-  background-image: black;
   /* Radial gradient */
   color: #fff;
   /* Text color */
@@ -11,10 +10,9 @@
   flex-direction: column;
   /* Important: Arrange items vertically */
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   /* Center vertically */
   overflow: hidden;
-  /* Prevent scrollbars */
 }
 
 .text-content {
@@ -29,15 +27,6 @@
 }
 
 .text-container {
-  text-align: center;
-  margin-bottom: 10px;
-  position: relative;
-    /* cần thiết để z-index hoạt động */
-    z-index: 2;
-    /* giá trị cao hơn các bông hoa */
-}
-
-h1 {
   font-size: 2em;
   /* Adjust as needed */
   font-family: "Pacifico", serif;
@@ -46,7 +35,73 @@ h1 {
   font-style: normal;
   text-shadow: 0 0 10px pink;
   /* Pink glow effect */
+  
+  text-align: center;
+  position: relative;
+  /* cần thiết để z-index hoạt động */
+  z-index: 2;
+  /* giá trị cao hơn các bông hoa */
 }
+
+/* Extra Small (XS) - Mobile */
+@media (max-width: 480px) {
+  .screen-container{
+    /* Prevent scrollbars */
+    padding-bottom: 50%;
+  }
+  .text-container {
+    font-size: 32px;
+  }
+}
+
+/* Mobile Landscape & Small Tablets */
+@media (min-width: 481px) {
+  .screen-container {
+    /* Prevent scrollbars */
+    padding-bottom: 40%;
+  }
+
+  .text-container {
+    font-size: 36px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 769px) {
+  .screen-container {
+    /* Prevent scrollbars */
+    padding-bottom: 20%;
+  }
+  .text-container {
+    font-size: 40px;
+  }
+}
+
+/* Laptops */
+@media (min-width: 1025px) {
+  .screen-container {
+    /* Prevent scrollbars */
+    padding-bottom: 10%;
+  }
+  .text-container {
+    font-size: 44px;
+  }
+}
+
+/* Desktops */
+@media (min-width: 1367px) {
+  .text-container {
+    font-size: 48px;
+  }
+}
+
+/* 2X Large (XXL) - Large Screens */
+@media (min-width: 1921px) {
+  .text-container {
+    font-size: 52px;
+  }
+}
+
 
 .glass-container {
   background-color: purple;

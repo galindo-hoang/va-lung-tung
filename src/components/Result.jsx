@@ -26,7 +26,7 @@ const MyScreen = ({data}) => {
     return (        
         <div className="screen">
             <div className="header">
-                <span>Vậy là chúng ta sẽ...</span> {/* Main text */}
+                Vậy là chúng ta sẽ...
             </div>
             <div className="body">
                 <div className="label">hẹn nhau vào ngày</div>

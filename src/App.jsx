@@ -24,65 +24,67 @@ const App = () => {
   const [afterCredit, setAfterCredit] = useState(null);
 
   return (
-    <div className="App">
-      <Router>
-        <Routes>
-          <Route path="/" element={
-            <InputDateScreen 
-              timestamp={time} 
-              onClick={(val) => {
-                setTime(val)
-              }} 
-              nextPath="/dinner"/>
-          }/>
+    <div className="App-Container">
+      <div className="App">
+        <Router>
+          <Routes>
+            <Route path="/" element={
+              <InputDateScreen 
+                timestamp={time} 
+                onClick={(val) => {
+                  setTime(val)
+                }} 
+                nextPath="/dinner"/>
+            }/>
 
-          <Route path="/dinner" element={
-            <GoOption
-              data={dataDiner}
-              value={dinner}
-              onClick={(val) => setDinner(val)}
-              nextPath="/desert"
-              title="dinner"
-            /> 
-          }/>
+            <Route path="/dinner" element={
+              <GoOption
+                data={dataDiner}
+                value={dinner}
+                onClick={(val) => setDinner(val)}
+                nextPath="/desert"
+                title="dinner"
+              /> 
+            }/>
 
-          <Route path="/desert" element={ 
-            <GoOption
-              data={dataDesert}
-              value={desert}
-              onClick={(val) => setDesert(val)}
-              nextPath="/activity"
-              title="desert" // Add a title prop
-            /> 
-          }/>
+            <Route path="/desert" element={ 
+              <GoOption
+                data={dataDesert}
+                value={desert}
+                onClick={(val) => setDesert(val)}
+                nextPath="/activity"
+                title="desert" // Add a title prop
+              /> 
+            }/>
 
-          <Route path="/activity" element={
-            <GoOption
-              data={dataPlaying}
-              value={playing}
-              onClick={(val) => setPlaying(val)}
-              nextPath="/afterCredit"
-              title="activity" // Add a title prop
-            />
-          }/>
+            <Route path="/activity" element={
+              <GoOption
+                data={dataPlaying}
+                value={playing}
+                onClick={(val) => setPlaying(val)}
+                nextPath="/afterCredit"
+                title="activity" // Add a title prop
+              />
+            }/>
 
-          <Route path="/afterCredit" element={
-            <GoOption
-              data={dataAfterCredit}
-              value={afterCredit}
-              onClick={(val) => setAfterCredit(val)}
-              nextPath="/thankyou"
-              title="afterCredit" // Add a title prop
-            />
-          }/>
+            <Route path="/afterCredit" element={
+              <GoOption
+                data={dataAfterCredit}
+                value={afterCredit}
+                onClick={(val) => setAfterCredit(val)}
+                nextPath="/thankyou"
+                title="afterCredit" // Add a title prop
+              />
+            }/>
 
-          <Route path="/thankyou" element={<Thankyou nextPath="/result"/>}/>
+            <Route path="/thankyou" element={<Thankyou nextPath="/result"/>}/>
 
-          <Route path="/result" element={<Result data={{time, dinner, desert, playing, afterCredit}}/>}/>
-          
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </Router>
+            <Route path="/result" element={<Result data={{time, dinner, desert, playing, afterCredit}}/>}/>
+            
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </Router>
+      </div>
     </div>
   );
 };
