@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Thankyou from "./components/Thankyou"
 import Result from "./components/Result"
 import InputDateScreen from "./components/InputDateScreen"
@@ -9,11 +9,11 @@ import {
   Navigate
 } from "react-router-dom";
 import "./App.css";
-import OptionScreen from "./components/GoOption";
+import GoOption from "./components/GoOption";
 
 import dataDiner from "./resources/dinner.json";
 import dataDesert from "./resources/desert.json";
-import dataPlaying from "./resources/playing.json";
+import dataPlaying from "./resources/activity.json";
 import dataAfterCredit from "./resources/afterCredit.json";
 
 const App = () => {
@@ -37,44 +37,44 @@ const App = () => {
           }/>
 
           <Route path="/dinner" element={
-            <OptionScreen
+            <GoOption
               data={dataDiner}
               value={dinner}
               onClick={(val) => setDinner(val)}
               nextPath="/desert"
-              title="Choose Dinner"
+              title="dinner"
             /> 
           }/>
 
           <Route path="/desert" element={ 
-            <OptionScreen
+            <GoOption
               data={dataDesert}
               value={desert}
               onClick={(val) => setDesert(val)}
               nextPath="/activity"
-              title="Choose Desert" // Add a title prop
+              title="desert" // Add a title prop
             /> 
           }/>
 
           <Route path="/activity" element={
-            <OptionScreen
+            <GoOption
               data={dataPlaying}
               value={playing}
               onClick={(val) => setPlaying(val)}
-              nextPath="/thankyou"
-              title="Choose Activity" // Add a title prop
+              nextPath="/afterCredit"
+              title="activity" // Add a title prop
             />
           }/>
 
-          {/* <Route path="/afterCredit" element={
-            <OptionScreen
+          <Route path="/afterCredit" element={
+            <GoOption
               data={dataAfterCredit}
               value={afterCredit}
               onClick={(val) => setAfterCredit(val)}
               nextPath="/thankyou"
-              title="Choose after-credit" // Add a title prop
+              title="afterCredit" // Add a title prop
             />
-          }/> */}
+          }/>
 
           <Route path="/thankyou" element={<Thankyou nextPath="/result"/>}/>
 

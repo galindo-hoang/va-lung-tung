@@ -5,8 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
-const DinnerScreen = ({onClick, data, nextPath, value}) => {
-  console.log(value, JSON.stringify(data))
+const GoOption = ({onClick, data, nextPath, value, title}) => {
   const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -46,10 +45,10 @@ const DinnerScreen = ({onClick, data, nextPath, value}) => {
         {data.title}
       </h1>
       
-      <div className="option-body">
+      <div className="option-body" style={{ gridTemplateColumns: data.items.length === 2 ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)' }}>
         {data.items.map((item, index) => {
           return <div className="menu-item" key={index}>
-            <img src={require(`../resources/template.png`)} alt={item.name}/>
+            <img src={require(`../resources/${title}/${item.name}.png`)} alt={item.name}/>
             <div className="menu-item-text">{item.name}</div>
           </div>
         })}
@@ -89,4 +88,4 @@ const DinnerScreen = ({onClick, data, nextPath, value}) => {
   );
 };
 
-export default DinnerScreen;
+export default GoOption;
