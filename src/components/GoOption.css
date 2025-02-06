@@ -173,7 +173,7 @@ img {
 
 /* Laptops */
 @media (min-width: 1025px) {
-    .menu-item-text, .dropdown-item, .selected-option, {
+    .menu-item-text, .dropdown-item, .selected-option {
         font-size: 24px;
     }
 
