@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Thankyou from "./components/Thankyou"
 import Result from "./components/Result"
 import InputDateScreen from "./components/InputDateScreen"
+import MySplash from "./components/MySplash"
 import {
   BrowserRouter as Router,
   Routes,
@@ -28,7 +29,9 @@ const App = () => {
       <div className="App">
         <Router>
           <Routes>
-            <Route path="/" element={
+            <Route path="/" element={<MySplash nextPath="/time"/>} />
+
+            <Route path="/time" element={
               <InputDateScreen 
                 timestamp={time} 
                 onClick={(val) => {
