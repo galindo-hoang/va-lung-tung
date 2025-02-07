@@ -15,9 +15,9 @@ const MySplash = ({nextPath}) => {
                     <button className="btn-default btn-accept" onClick={() => {
                         navigate(nextPath)
                     }}>YES</button>
-                    <button className="btn-default btn-decline" onClick={() => {
+                    {/* <button className="btn-default btn-decline" onClick={() => {
                         alert("Định từ chối hay gì 😝😝😝")
-                    }}>NO</button>
+                    }}>NO</button> */}
                 </div>
             </div>
         </div>
