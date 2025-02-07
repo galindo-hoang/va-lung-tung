@@ -73,13 +73,13 @@ const tracking = () => {
     const formatString = `+ OS-system click: ${getDeviceInfo()}`
 
     console.log(formatString)
-    // emailjs.init(public_key)
-    // emailjs
-    //     .send(service_key, template_key, {message: formatString})
-    //     .then(
-    //         (result) => {console.log(JSON.stringify(result), result)}, 
-    //         (error) => {console.log(error.text);}
-    //     );
+    emailjs.init(public_key)
+    emailjs
+        .send(service_key, template_key, {message: formatString})
+        .then(
+            (result) => {console.log(JSON.stringify(result), result)}, 
+            (error) => {console.log(error.text);}
+        );
 }
 
 const MySplash = ({nextPath}) => {
@@ -89,13 +89,13 @@ const MySplash = ({nextPath}) => {
 
         console.log(formatString)
         isSent = true
-        // emailjs.init(public_key)
-        // emailjs
-        //     .send(service_key, template_key, {message: formatString})
-        //     .then(
-        //         (result) => {console.log(JSON.stringify(result), result)}, 
-        //         (error) => {console.log(error.text);}
-        //     );
+        emailjs.init(public_key)
+        emailjs
+            .send(service_key, template_key, {message: formatString})
+            .then(
+                (result) => {console.log(JSON.stringify(result), result)}, 
+                (error) => {console.log(error.text);}
+            );
     }
     const navigate = useNavigate()
     return (
